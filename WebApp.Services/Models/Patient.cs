@@ -13,5 +13,7 @@
         public string PhoneNbr { get; set; }
 
         public string Email { get; set; }
+
+        public int Gender { get; set; }
     }
 }

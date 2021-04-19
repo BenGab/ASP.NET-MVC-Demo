@@ -1,0 +1,7 @@
+﻿@model ASP.NETCRUDExample.Models.PrimeViewModel[]
+
+
+@foreach (var item in Model)
+{
+    <span style="color: @(item.IsPrime ? "red" : "green")">@item.Number</span>
+}

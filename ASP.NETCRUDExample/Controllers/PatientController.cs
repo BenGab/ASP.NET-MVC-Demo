@@ -1,9 +1,5 @@
 ﻿using ASP.NETCRUDExample.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using WebApp.Services;
 using WebApp.Services.Models;
 
@@ -20,7 +16,7 @@ namespace ASP.NETCRUDExample.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(new PatientViewModel());
         }
 
         [HttpPost]
@@ -34,7 +30,8 @@ namespace ASP.NETCRUDExample.Controllers
                     Email = model.Email,
                     Name = model.Name,
                     PatientNbr = model.PatientNbr,
-                    PhoneNbr = model.PhoneNbr
+                    PhoneNbr = model.PhoneNbr,
+                    Gender = model.Gender
                 });
             }
 

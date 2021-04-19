@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace ASP.NETCRUDExample.Models
 {
+
     public class PatientViewModel
     {
         [Required]
-        [Display(Name="Name: ")]
+        [Display(Name = "Name: ")]
         public string Name { get; set; }
 
         [Required]
@@ -32,5 +33,21 @@ namespace ASP.NETCRUDExample.Models
         [Compare(nameof(Email))]
         [Display(Name = "Confirm E-mail: ")]
         public string EmailConfirm { get; set; }
+
+        [Required]
+        [Display(Name = "Gender: ")]
+        public int Gender { get; set; }
+
+        public Dictionary<string, int> Genders { get => GetGenders();  }
+
+        public static Dictionary<string, int> GetGenders()
+        {
+            return new Dictionary<string, int>()
+            {
+                 {"Male", 0 },
+                {"Female", 1 },
+                {"Other", 2 }
+            };
+        }
     }
 }
