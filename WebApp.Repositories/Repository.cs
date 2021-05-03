@@ -5,26 +5,35 @@ namespace WebApp.Repositories
 {
     public class Repository<T> : IRepository<T>
     {
-        private readonly IDataContext<T> dataContext;
+        private readonly IDataContextFactory<T> dataContextFactory;
 
-        public Repository(IDataContext<T> dataContext)
+        public Repository(IDataContextFactory<T> dataContextFactory)
         {
-            this.dataContext = dataContext;
+            this.dataContextFactory = dataContextFactory;
         }
 
         public T Add(int id, T data)
         {
-            return dataContext.Add(id, data);
+            using (var dataContext = dataContextFactory.Create())
+            {
+                return dataContext.Add(id, data);
+            }
         }
 
         public T Get(int id)
         {
-            return dataContext.Get(id);
+            using (var dataContext = dataContextFactory.Create())
+            {
+                return dataContext.Get(id);
+            }
         }
 
         public IEnumerable<T> GetAll()
         {
-            return dataContext.GetAll();
+            using (var dataContext = dataContextFactory.Create())
+            {
+                return dataContext.GetAll();
+            }
         }
     }
 }

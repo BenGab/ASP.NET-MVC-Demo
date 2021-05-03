@@ -2,7 +2,7 @@
 
 namespace Webapp.DataContext
 {
-    public class DataContext<T> : IDataContext<T>
+    internal class DataContext<T> : IDataContext<T>
     {
         private readonly IDictionary<int, T> db;
 
@@ -20,6 +20,11 @@ namespace Webapp.DataContext
 
             db.Add(id, data);
             return data;
+        }
+
+        public void Dispose()
+        {
+            //Do Nothing, Just example for factory base solution
         }
 
         public T Get(int id)

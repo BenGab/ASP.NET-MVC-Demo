@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Webapp.DataContext
 {
-    public interface IDataContext<T>
+    public interface IDataContext<T> : IDisposable
     {
         IEnumerable<T> GetAll();
 

@@ -27,7 +27,7 @@ namespace ASP.NETCRUDExample
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddSingleton<IDataContext<Patient>, DataContext<Patient>>();
+            services.AddSingleton<IDataContextFactory<Patient>, DataContextFactory<Patient>>();
             services.AddSingleton<IRepository<Patient>, Repository<Patient>>();
             services.AddSingleton<IPatientService, PatientService>();
         }
@@ -41,7 +41,7 @@ namespace ASP.NETCRUDExample
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Patient/Error");
             }
 
             app.UseStaticFiles();
@@ -54,7 +54,7 @@ namespace ASP.NETCRUDExample
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Patient}/{action=Index}/{id?}");
             });
         }
     }

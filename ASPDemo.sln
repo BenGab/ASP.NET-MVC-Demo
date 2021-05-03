@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp.Repositories", "WebA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp.Services", "WebApp.Services\WebApp.Services.csproj", "{5BCA2CA9-25C2-4B0F-8567-D91ACF161539}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspClient", "AspClient\AspClient.csproj", "{D49A49D6-8880-4FA8-860D-FA97841B2614}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspClient", "AspClient\AspClient.csproj", "{D49A49D6-8880-4FA8-860D-FA97841B2614}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
